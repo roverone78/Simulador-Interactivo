@@ -8,10 +8,11 @@ let totalNeto =0;
 let seguirComprando = false;
 const IVA = 0.21;
 
+//lista de articulos e ingreso de la cantidad de cada uno de estos.
 do  {
         articulo = prompt("¿Cual artículo deseas comprar?\n Mochila\n Navaja \n Reloj \n Botas \n Campera \n Linterna").toUpperCase();
         cantidad = Number(prompt("¿Cuantos deseas llevar?"));
-
+        //Se anexa los precios de cada articulo.
         switch  (articulo)      {
                 case    "MOCHILA" :
                         precio = 16400;
@@ -45,3 +46,32 @@ do  {
 } while (seguirComprando);
 
 alert ("El valor total de su compra con IVA es: "+totalNeto);
+
+
+//Ingreso del total neto para empezar la funcion de calculo de cuotas.
+function monto1(){
+    let monto1 = totalNeto;
+    return monto1
+    }
+    
+//Cuotas a pagar
+function cuotas1(){
+    let cuotas1 = Number(prompt("En cuantas cuotas quiere pagar, elija de 1 a 12"));
+    return cuotas1
+    }
+//creando las variables para la division monto entre cuotas
+let monto = monto1()
+let cuotas = cuotas1()
+    
+    
+//Funcion para dividir cantidad en cuotas
+function dividir(dato1, dato2){
+    let resultado = dato1 / dato2;
+    return resultado
+}
+    
+//Varible para la division del monto en cuotas
+let division = dividir(monto, cuotas)
+    
+//Mostrar resultado
+alert("Usted debe pagar " + cuotas + " cuotas de " + division)
